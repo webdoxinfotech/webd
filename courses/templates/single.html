@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+
+
+{% load static %}
+
+{% block breadcrumbs %}
+    {% include 'header.html' with title=course.name %}
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Detail Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="mb-5">
+                        <h6 class="text-primary mb-3">{{ course.published_date }}</h6>
+                        <h1 class="mb-5">{{ course.name }}</h1>
+<!--                        <img class="img-fluid rounded w-100 mb-4" src="{{ course.image.url }}" alt="{{ course.name }}">-->
+                        <div class="course-text">
+                            {{ course.text|safe }}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 mt-5 mt-lg-0">
+
+                     <!--  Enquiry Form -->
+                   <div class="myenquiry mb-5 mt-lg-0  d-block d-md-none" >
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Book a Free Demo</h3>
+                    <div class="contact-form bg-secondary rounded p-5">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control border-0 p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                    <!-- Search Form -->
+                    <div class="mb-5">
+                        <form action="{% url 'search' %}">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-lg" name="q" placeholder="Keyword">
+                                <div class="input-group-append">
+                                    <button class=" bg-transparent text-primary input-group-text">
+                                        <i class="fa fa-search"></i></span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Subjects List -->
+                    <div class="mb-5">
+                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h3>
+                        <ul class="list-group list-group-flush">
+                            {% for subject in subjects %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                <a href="" class="text-decoration-none h6 m-0">{{ subject.name }}</a>
+                                <span class="badge badge-primary badge-pill">{{ subject.courses.count }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Recent Courses -->
+                    <div class="mb-5">
+                        <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Courses</h3>
+                        {% for recent_course in recent_courses %}
+                        <a class="d-flex align-items-center text-decoration-none mb-3" href="{% url 'single_course' slug=recent_course.slug %}">
+                            <img class="img-fluid rounded" src="img/blog-80x80.jpg" alt="">
+                            <div class="pl-3">
+                                <h6 class="m-1">{{ recent_course.name }}</h6>
+                                <small>{{ recent_course.published_date|date:'M d, Y' }}</small>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+
+                    <!--  Enquiry Form -->
+                   <div style="top: 10px" class=" mb-5 mt-lg-0 sticky-top d-none d-md-block" >
+                    <h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">Book a Free Demo</h3>
+                    <div class="contact-form bg-secondary rounded p-5">
+                        <div id="success1"></div>
+                        <form name="sentMessage" id="contactForm1" novalidate="novalidate">
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" id="name1" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="email" class="form-control border-0 p-4" id="email1" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control border-0 p-4" id="subject1" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control border-0 py-3 px-4" rows="5" id="message1" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton1">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Detail End -->
+{% endblock %}

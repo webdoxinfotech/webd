@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block breadcrumbs %}
+    {% include 'header.html' with title="About us" %}
+{% endblock %}
+
+{% block content %}
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center flex-column-reverse">
+                <div class="col-lg-5">
+<!--                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">-->
+                </div>
+                <div class="col-lg-12">
+                    <div class="text-left mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                        <h1>WebDox Computer Institute in Jalandhar: Unlocking Your Potential for Success</h1>
+                    </div>
+                    <div>
+
+<h4>Introduction:</h4>
+
+<p>Are you searching for a reputable computer institute in Jalandhar? Look no further than WebDox Computer Institute. We are committed to empowering individuals with the skills and knowledge necessary to excel in the digital age. Discover why WebDox should be your top choice when it comes to pursuing your computer education in Jalandhar.</p>
+
+<h4>Cutting-edge Curriculum at WebDox Computer Institute in Jalandhar</h4>
+
+<p>At WebDox, we offer a cutting-edge curriculum that aligns with the latest industry trends and demands. Our computer institute provides comprehensive courses covering programming, web development, data science, graphic design, and digital marketing. We are dedicated to equipping our students with the skills needed to thrive in their chosen fields.</p>
+
+<h4>Experienced and Dedicated Faculty at WebDox Computer Institute in Jalandhar</h4>
+
+                        <p>Our computer institute in Jalandhar takes pride in its experienced and dedicated faculty members. With industry professionals as instructors, you will receive practical insights and personalized attention throughout your learning journey. The expertise and guidance of our faculty will give you a competitive edge in the job market.</p>
+
+<h4>State-of-the-Art Infrastructure at WebDox Computer Institute in Jalandhar</h4>
+
+                        <p>WebDox Computer Institute in Jalandhar boasts state-of-the-art infrastructure to enhance your learning experience. Our well-equipped computer labs provide the latest software and hardware, allowing for hands-on experience in a simulated real-world environment. Additionally, we offer high-speed internet connectivity, comfortable classrooms, and a resourceful library for optimal learning.</p>
+
+<h4>Practical-oriented Approach at WebDox Computer Institute in Jalandhar</h4>
+
+                        <p>At WebDox, we believe in a practical-oriented approach to learning. Our courses emphasize practical application, enabling you to develop real-world problem-solving skills. Through hands-on projects, assignments, and industry-relevant case studies, you will gain the confidence needed to excel in your future career.</p>
+
+
+<h4>Flexible Learning Options at WebDox Computer Institute in Jalandhar</h4>
+
+<p>WebDox understands that students have unique preferences and circumstances. To accommodate diverse needs, our computer institute offers flexible learning options. Whether you prefer classroom-based instruction, online courses, or a blended learning approach, we cater to your requirements. Our goal is to make quality education accessible to all, regardless of geographical constraints or time limitations.</p>
+
+                        <h6>Conclusion:</h6>
+
+<p>Choosing the right computer institute is crucial for your personal and professional growth. WebDox Computer Institute in Jalandhar provides top-notch education, industry-relevant skills, and a supportive learning environment. Our cutting-edge curriculum, experienced faculty, state-of-the-art infrastructure, practical-oriented approach, placement assistance, and flexible learning options make us the ideal choice for individuals seeking a computer institute in Jalandhar.</p>
+
+<p>Unlock your potential and embark on a journey towards success with WebDox Computer Institute in Jalandhar. Join us today and pave the way for a rewarding career in the ever-expanding world of technology. Enroll in our courses and contact us to take the first step. Your future awaits at WebDox Computer Institute in Jalandhar!</p>
+                    </div>
+                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+ 
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Testimonial</h5>
+                <h1>What Say Our Students</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                       <div class="owl-carousel testimonial-carousel">
+
+                        {% for r in reviews %}
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">{{ r.review }}</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{{ r.image.url }}" alt="">
+                            <h5 class="m-0">{{ r.name }}</h5>
+                            <span>{{ r.profession }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+{% endblock %}

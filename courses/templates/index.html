@@ -1,0 +1,219 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'img/about.jpg' %}" alt="">
+                </div>
+                <div class="col-lg-7">
+                    <div class="text-left mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">About Us</h5>
+                        <h1>Computer Institute in Jalandhar</h1>
+                    </div>
+                    <div>
+                        <p>Webdox is an ISO certified computer institute in Jalandhar established in 2018 Near HMV College, Jalandhar. Our aim is to equip students with the necessary IT skills by focusing more on Practical Concepts of the course. IT companies - irrespective of the location it is situated in - expects a candidate to have a solid practical skill who can complete the job on time with decent quality, because at the end of the day they want their deadlines to be met. Therefore, we focus more on Live Projects and thus in a way building a portfolio for students which can latter be beneficial to get a Good Job in IT Sector.</p>
+<p>We have been following this approach from last 5 years and many of our students are working in IT sector all around the world.</p>
+<h6>Features:</h6>
+                        <ol>
+                            <li>100+ Five Star ratings on Google</li>
+                            <li>Experienced Faculty with over 10+ Years of Experience</li>
+                            <li>Webdox is a Trademark Registered with Govt. of India for imparting educational services</li>
+                            <li>Webdox Fulfills ISO 9001-2015 Quality Assurance Standards</li>
+                            <li>Webdox is an (OPC) Pvt Ltd. Firm Registered with Govt of India</li>
+                            <li>Flexible Timings are given to working professionals and students. </li>
+                            <li>Students are welcomed for doubt clearance sessions even after course is completed.</li>
+                            <li>Online and Offline Classes are available</li>
+                            <li>Assignment assistance service is available for students studying abroad for IT/Computer Courses.</li>
+                        </ol>
+                    </div>
+                    <a href="" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold mt-2">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Courses Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
+                <h1>Our Popular Courses</h1>
+            </div>
+            <div class="row">
+                {% for course in courses %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ course.image.url }}" alt="{{ course.name }}">
+                        <div class="bg-secondary p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
+                                <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>01h 30m</small>
+                            </div>
+                            <a class="h4" href="{% url 'single_course' slug=course.slug %}">{{ course.name }}</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">Rs. 99</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Courses End -->
+
+
+    <!-- Category Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Subjects</h5>
+                <h1>Explore Top Subjects</h1>
+            </div>
+            <div class="row">
+                {% for subject in subjects %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="cat-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="{{ subject.image.url }}" alt="">
+                        <a class="cat-overlay text-white text-decoration-none" href="">
+                            <h4 class="text-white font-weight-medium">{{ subject.name }}</h4>
+                            <span>{{ subject.courses.count }} Courses</span>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!-- Category Start -->
+
+
+
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
+                        <h1 class="text-white">Ready to level up your computer skills?</h1>
+                    </div>
+                    <p class="text-white">
+                        "Enroll today at Webdox Computer Institute and unlock a world of opportunities! Whether you're a beginner or an experienced professional, our comprehensive courses will equip you with the knowledge and expertise you need to succeed in the rapidly evolving tech industry. Don't miss out on this chance to enhance your career. Visit our website or call us at +91-9872118234 to enroll now!"</p>
+                   <a class="btn btn-primary py-2 px-4 d-flex align-items-center" href="tel:+919872118234" style="width: 350px"><i class="fa fa-2x fa-phone-alt text-primary mr-3 text-light"></i> Call Today & Book a Free Demo</a>
+
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Sign Up Now</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-primary p-5">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your name" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" style="height: 47px;">
+                                        <option selected>Select a course</option>
+                                        {% for s in simple %}
+                                        <option value="{{ s}}">{{ s }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Google Reviews</h5>
+                <h1>What Say Our Students</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="owl-carousel testimonial-carousel">
+
+                        {% for r in reviews %}
+                        <div class="text-center">
+                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
+                            <h4 class="font-weight-normal mb-4">{{ r.review }}</h4>
+                            <img class="img-fluid mx-auto mb-3" src="{{ r.image.url }}" alt="">
+                            <h5 class="m-0">{{ r.name }}</h5>
+                            <span>{{ r.profession }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Blog Start -->
+<!--    <div class="container-fluid py-5">-->
+<!--        <div class="container pt-5 pb-3">-->
+<!--            <div class="text-center mb-5">-->
+<!--                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Our Blog</h5>-->
+<!--                <h1>Latest From Our Blog</h1>-->
+<!--            </div>-->
+<!--            <div class="row pb-3">-->
+<!--                <div class="col-lg-4 mb-4">-->
+<!--                    <div class="blog-item position-relative overflow-hidden rounded mb-2">-->
+<!--                        <img class="img-fluid" src="{% static 'img/blog-1.jpg' %}" alt="">-->
+<!--                        <a class="blog-overlay text-decoration-none" href="">-->
+<!--                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>-->
+<!--                            <p class="text-primary m-0">Jan 01, 2050</p>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 mb-4">-->
+<!--                    <div class="blog-item position-relative overflow-hidden rounded mb-2">-->
+<!--                        <img class="img-fluid" src="{% static 'img/blog-2.jpg' %}" alt="">-->
+<!--                        <a class="blog-overlay text-decoration-none" href="">-->
+<!--                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>-->
+<!--                            <p class="text-primary m-0">Jan 01, 2050</p>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 mb-4">-->
+<!--                    <div class="blog-item position-relative overflow-hidden rounded mb-2">-->
+<!--                        <img class="img-fluid" src="{% static 'img/blog-3.jpg' %}" alt="">-->
+<!--                        <a class="blog-overlay text-decoration-none" href="">-->
+<!--                            <h5 class="text-white mb-3">Lorem elitr magna stet eirmod labore amet labore clita at ut clita</h5>-->
+<!--                            <p class="text-primary m-0">Jan 01, 2050</p>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- Blog End -->
+{% endblock %}
