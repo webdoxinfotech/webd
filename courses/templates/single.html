@@ -7,6 +7,13 @@
     {% include 'header.html' with title=course.name %}
 {% endblock %}
 
+{% block title %}
+<title>{{ course.name }} | Webdox Computer Institute</title>
+{% if course.seo_keywords and course.seo_meta_desc %}
+ <meta content="{{ course.seo_keywords }}" name="keywords">
+ <meta content="{{ course.seo_meta_desc }}" name="description">
+{% endif %}
+{% endblock %}
 
 {% block content %}
 

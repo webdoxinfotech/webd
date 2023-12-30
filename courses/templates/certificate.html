@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+
+{% load static %}
+
+{% block breadcrumbs %}
+    {% include 'header.html' with title=course.name %}
+{% endblock %}
+
+{% block title %}
+<title>{{ course.name }} | Webdox Computer Institute</title>
+{% if course.seo_keywords and course.seo_meta_desc %}
+ <meta content="{{ course.seo_keywords }}" name="keywords">
+ <meta content="{{ course.seo_meta_desc }}" name="description">
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <!-- Detail Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+          <div class="text-center mb-5">
+                <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Check Certificate</h5>
+                <h1>Make sure you have Certificate Reference ID with you</h1>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form bg-secondary rounded p-5">
+                        <div id="success"></div>
+                        <form method="POST">
+
+
+
+                            {% csrf_token %}
+
+  {{ form.non_field_errors }}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field.errors }}
+    {{ hidden_field }}
+  {% endfor %}
+
+ <div>
+    {% for field in form.visible_fields %}
+      <div class="control-group">
+        <td>
+          {{ field.errors }}
+          {{ field }}
+          {{ field.help_text }}
+        </td>
+      </div>
+    {% endfor %}
+  </div>
+
+<div class="text-center">
+<input type="submit" id="sendMessageButton" class="btn btn-primary py-3 px-5 mt-3">
+</div>
+                     </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- view_pdf.html -->
+        {% if uploaded_file.certificate %}
+        <iframe src="{{ uploaded_file.certificate.url }}" type="application/pdf" width="100%" height="600px" />
+        {% endif %}
+
+        {% if err %}
+            <p class="text-center">{{err}}</p>
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}
+
+

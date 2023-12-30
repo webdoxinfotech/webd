@@ -9957,3 +9957,16 @@ h6,
   list-style-type: none;
 }
 
+.course-text {
+    line-height: 2;
+}
+
+.course-card{
+    background-color: #F9DDCF !important;
+}
+
+@media screen and (max-width:756px) {
+    .contact-form {
+        padding: 2rem !important;
+    }
+}

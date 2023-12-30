@@ -28,7 +28,8 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('course/<slug:slug>', single_course, name='single_course'),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('search/', search, name='search')
+    path('search/', search, name='search'),
+    path('certificate/', getCertificate, name='certificate'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

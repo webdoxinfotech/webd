@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from courses.models import Course, Subject, Reviews
+from courses.models import Course, Subject, Reviews, Certificate
 
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ("name", "slug")
@@ -17,3 +17,4 @@ admin.site.register(Course, CourseAdmin)
 
 
 admin.site.register(Reviews)
+admin.site.register(Certificate)

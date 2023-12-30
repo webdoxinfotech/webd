@@ -4,12 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    
+    {% block title %}
     <title>Webdox Computer Institute | Best Computer Institute in Jalandhar</title>
+    <meta content="Computer Institute in Jalandhar, MERN, MEAN, Java, Python, C Language, C++ Programming, Graphics Designing, Video Editing, 3d Animation, 2d Animation, Automated Software Testing, Manual Software Testing" name="keywords">
+    <meta content="Are you looking for a Computer Course in Jalandhar? We provide Courses like Python, Java, MERN, MEAN, Cyber Security, Digital Marketing, Graphics Designing,etc." name="description">
+    {% endblock %}
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="icon" type="image/png" href="{% static 'img/webdox logo icon.png' %}" />
 
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -34,7 +36,9 @@
         <div class="row align-items-center py-4 px-xl-5">
             <div class="col-lg-3">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+<!--                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>-->
+
+                       <img src="{% static 'img/webdox logo.png' %}" width="300">
                 </a>
             </div>
             <div class="col-lg-3 text-right">
@@ -51,7 +55,7 @@
                     <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
                     <div class="text-left">
                         <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
-                        <small>webdox@webdox-computer-institute.com</small>
+                        <small>info@webdox.tech</small>
                     </div>
                 </div>
             </div>
@@ -97,7 +101,8 @@
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+<!--                        <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>-->
+                        <img src="{% static 'img/webdox logo.png' %}" width="150" >
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -108,7 +113,7 @@
                             <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}active{% endif %}">About</a>
                             <a href="{% url 'course' %}" class="nav-item nav-link {% if request.path == '/course/' %}active{% endif %}">Courses</a>
                             <a href="{% url 'blog' %}" class="nav-item nav-link {% if request.path == '/blog/' %}active{% endif %}">Blog</a>
-                            <a href="#" class="nav-item nav-link {% if request.path == '/teacher/' %}active{% endif %}">Teachers</a>
+                            <a href="{% url 'certificate' %}" class="nav-item nav-link {% if request.path == '/certificate/' %}active{% endif %}">Check Certificate</a>
 <!--                            <div class="nav-item dropdown">-->
 <!--                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>-->
 <!--                                <div class="dropdown-menu rounded-0 m-0">-->
@@ -138,9 +143,6 @@
 {% block content %}
 {% endblock %}
 
-
-
-
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
@@ -150,7 +152,7 @@
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Get In Touch</h5>
                         <p><i class="fa fa-map-marker-alt mr-2"></i>SCF-4, BSF Colony Market, Jalandhar</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+91-9872118234</p>
-                        <p><i class="fa fa-envelope mr-2"></i>webdox@webdox-computer-institute.com</p>
+                        <p><i class="fa fa-envelope mr-2"></i>info@webdox.tech</p>
                         <div class="d-flex justify-content-start mt-4">
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -162,17 +164,17 @@
                         <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Our Courses</h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Android Development</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>iOS Development</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Graphics Design</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Digital Marketing</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-12 mb-5">
                 <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Newsletter</h5>
-                <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est diam</p>
+                <p>Webdox is an ISO Certified and MSME Registered Computer Institute which is located in Jalandhar. Webdox is a Trademark Owned by Webdox Infotech (OPC) Pvt. Ltd. </p>
                 <div class="w-100">
                     <div class="input-group">
                         <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Your Email Address">
@@ -187,25 +189,25 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Domain Name</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                <p class="m-0 text-white">&copy; <a href="#">Webdox.tech</a>. All Rights Reserved. 2024
                 </p>
             </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <ul class="nav d-inline-flex">
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Privacy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Terms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">FAQs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white py-0" href="#">Help</a>
-                    </li>
-                </ul>
-            </div>
+<!--            <div class="col-lg-6 text-center text-md-right">-->
+<!--                <ul class="nav d-inline-flex">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link text-white py-0" href="#">Privacy</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link text-white py-0" href="#">Terms</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link text-white py-0" href="#">FAQs</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link text-white py-0" href="#">Help</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
         </div>
     </div>
     <!-- Footer End -->
