@@ -9961,8 +9961,8 @@ h6,
     line-height: 2;
 }
 
-.course-card{
-    background-color: #F9DDCF !important;
+.course-card {
+    background: #F9DDCF !important;
 }
 
 @media screen and (max-width:756px) {
