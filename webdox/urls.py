@@ -30,6 +30,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('search/', search, name='search'),
     path('certificate/', getCertificate, name='certificate'),
+    path('sitemap/', sitemap, name='sitemap'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

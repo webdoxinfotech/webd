@@ -76,3 +76,7 @@ def getCertificate(request):
                 return render(request, "certificate.html", {'form': form, 'err': e})
                 # print(e)
     return render(request, "certificate.html", {'form': form})
+
+
+def sitemap(request):
+    return render(request, "5754903_31.xml",content_type="application/xhtml+xml")
