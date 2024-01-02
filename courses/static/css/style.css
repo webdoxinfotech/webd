@@ -9962,7 +9962,7 @@ h6,
 }
 
 .course-card {
-    background: #F9DDCF !important;
+    background-color: #F9DDCF !important;
 }
 
 @media screen and (max-width:756px) {
