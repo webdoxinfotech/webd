@@ -230,8 +230,8 @@
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
 
-    <!--Typing Effect-->
-     <script type="module" src="{% static 'js/index.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>
